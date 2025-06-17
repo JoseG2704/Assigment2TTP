@@ -32,3 +32,19 @@ let doubledNumbers = myMap(numbers2, function(number) {
 });
 
 console.log(doubledNumbers)
+
+// filter() //
+function myFilter(arr) {
+  let evenNum = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      evenNum.push(arr[i]);
+    }
+  }
+  return evenNum;
+}
+//test
+problem3 = "#3 filter(), myFilter()";
+console.log(problem3);
+let filteredNumbers = myFilter([1, 2, 3, 4, 5]);
+console.log(filteredNumbers); 
