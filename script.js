@@ -95,27 +95,6 @@ console.log(problem6);
 let sum = myReduce([1, 2, 3, 4, 5]);
 console.log(sum)
 
-
-//#6 reduce()
-function myReduce(array, callback, initalValue) {
-    let acc = initalValue;
-    let startIndex = 0;
-
-    if (acc === undefined) {
-        acc = array[0];
-        startIndex = 1;
-
-    }
-    for (let i = startIndex; i < array.length; i++) {
-        acc = callback(acc, array[i], i, array);
-    }
-
-    return acc;
-
-}
-console.log("myReduce:", myReduce([1, 2, 3, 4], (a, b) => a + b, 0));
-
-
 //#7 includes()
 function myIncludes(array, target) {
 
