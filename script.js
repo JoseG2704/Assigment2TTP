@@ -1,7 +1,7 @@
 // forEach() //
-function myEach(array, callback) {
-  for (let i = 0; i < array.length; i++) {
-    callback(array[i], i, array);
+function myEach(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
   }
 }
 
@@ -9,9 +9,8 @@ function myEach(array, callback) {
 problem1 = "#1 forEach(), myEach()";
 console.log(problem1);
 let numbers = [1, 2, 3, 4, 5];
-myEach(numbers, function(num) {
-  console.log(num);
-}) 
+myEach(numbers); // Output: 1 2 3 4 5
+
 
 
 // map() //
