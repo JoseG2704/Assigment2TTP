@@ -79,3 +79,18 @@ console.log(problem5);
 let allEven = myEvery([2, 4, 6, 8]);
 console.log(allEven); 
 
+
+// #6 reduce() //
+function myReduce(arr) {
+  let total = 0;
+  for (let i = 0; i < arr.length; i++) {
+    total += arr[i];
+  }
+  return total;
+
+}
+//test
+problem6 = "#6 reduce(), myReduce()";
+console.log(problem6);
+let sum = myReduce([1, 2, 3, 4, 5]);
+console.log(sum)
