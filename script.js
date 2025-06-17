@@ -94,3 +94,98 @@ problem6 = "#6 reduce(), myReduce()";
 console.log(problem6);
 let sum = myReduce([1, 2, 3, 4, 5]);
 console.log(sum)
+
+
+//#6 reduce()
+function myReduce(array, callback, initalValue) {
+    let acc = initalValue;
+    let startIndex = 0;
+
+    if (acc === undefined) {
+        acc = array[0];
+        startIndex = 1;
+
+    }
+    for (let i = startIndex; i < array.length; i++) {
+        acc = callback(acc, array[i], i, array);
+    }
+
+    return acc;
+
+}
+console.log("myReduce:", myReduce([1, 2, 3, 4], (a, b) => a + b, 0));
+
+
+//#7 includes()
+function myIncludes(array, target) {
+
+    for (let i = 0; i < array.length; i++) {
+
+        if (array[i] === target)
+            return true;
+
+    }
+    return false;
+
+}
+console.log("myIncludes:", myIncludes(["a", "b", "c"], "a"));
+
+
+//#8 indexOf()
+function myIndexOf(array, target) {
+
+    for (i = 0; i < array.length; i++) {
+        if (array[i] === target)
+            return i;
+
+    }
+    return -1;
+
+}
+console.log("myIndexOf:", myIndexOf(["a", "b", "c"], "c"));
+
+
+//#9 push()
+function myPush(array, elementToAdd) {
+    array[array.length] = elementToAdd;
+    return array.length;
+
+} 
+let testArray = ["blueberry", "apple"];
+console.log("myPush:", myPush(testArray, "oranges"));
+console.log("Array after push:", testArray);
+
+
+//#10 lastIndexOf()
+function myLastIndexOf(array, target) {
+    for (let i = array.length - 1; i >= 0; i--) {
+        if (array[i] === target) return i;
+    }
+    return -1;
+
+} 
+console.log("myLastIndexOf;", myLastIndexOf(["a", "b", "c", "b"], "b"));
+
+
+//#11 Object.keys()
+Object.grabKeys = function (obj) {
+    let keys = [];
+    for (let key in obj) {
+        if (obj.hasOwnProperty(key)) keys.push(key);
+    }
+    return keys;
+};
+console.log("grabKeys:", Object.grabKeys({ name: "Albert", age: 27 })); 
+
+
+//#12 Object.values()
+Object.grabValues = function (obj) {
+    let values = [];
+    for (let key in obj) {
+        if (obj.hasOwnProperty(key)) values.push(obj[key]);
+
+    }
+    return values;
+
+};
+console.log("grabValues:", Object.grabValues({ name: "Ricky", age: 22 }));
